@@ -11,4 +11,5 @@ validset <- dataset1[-train]
 
 dataset1$class = factor(dataset1$class) 
 model0 <- randomForest(dataset1$class ~., data = dataset1)
-model0
+print(model0)
+plot(model0)
