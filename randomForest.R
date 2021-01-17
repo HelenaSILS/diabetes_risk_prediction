@@ -1,4 +1,4 @@
-install.packages("randomForest")
+#install.packages("randomForest")
 library(randomForest)
 
 dataset1 <- read.csv("diabetes_data_upload.csv", head=TRUE)
@@ -9,6 +9,6 @@ train <- sample(nrow(dataset1), 0.7*nrow(dataset1), replace = FALSE)
 trainset <- dataset1[train,]
 validset <- dataset1[-train]
 
-
-model0 <- randomForest(class ~., data = trainset, importance = TRUE)
+dataset1$class = factor(dataset1$class) 
+model0 <- randomForest(dataset1$class ~., data = dataset1)
 model0
