@@ -1,4 +1,4 @@
-#install.packages("randomForest")
+if(!require("randomForest")) install.packages("randomForest")
 library(randomForest)
 
 dataset1 <- read.csv("diabetes_data_upload.csv", head=TRUE)
